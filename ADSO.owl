@@ -1,0 +1,205 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://ontology.drpawspaw.com/"
+     xml:base="https://ontology.drpawspaw.com/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="https://ontology.drpawspaw.com/">
+        <owl:versionIRI rdf:resource="https://ontology.drpawspaw.com/v1.0.0/"/>
+        <rdfs:comment xml:lang="en">Animal disease symptoms ontology</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="en">Viraj Lakshitha Bandara</rdfs:isDefinedBy>
+        <owl:versionInfo xml:lang="en">v1.0.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://ontology.drpawspaw.com/hasDisease -->
+
+    <owl:ObjectProperty rdf:about="https://ontology.drpawspaw.com/hasDisease">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://ontology.drpawspaw.com/hasDisease"/>
+                <owl:someValuesFrom rdf:resource="https://ontology.drpawspaw.com/animal"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://ontology.drpawspaw.com/hasDisease"/>
+                <owl:someValuesFrom rdf:resource="https://ontology.drpawspaw.com/disease"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Use to make the connection between Animal and Disease</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://ontology.drpawspaw.com/hasSymptom -->
+
+    <owl:ObjectProperty rdf:about="https://ontology.drpawspaw.com/hasSymptom">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://ontology.drpawspaw.com/hasDisease"/>
+                <owl:someValuesFrom rdf:resource="https://ontology.drpawspaw.com/disease"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://ontology.drpawspaw.com/hasDisease"/>
+                <owl:someValuesFrom rdf:resource="https://ontology.drpawspaw.com/symptom"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Use to make the connection between Disease and Symptom</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://ontology.drpawspaw.com/hasSynonym -->
+
+    <owl:ObjectProperty rdf:about="https://ontology.drpawspaw.com/hasSynonym">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://ontology.drpawspaw.com/hasSymptom"/>
+                <owl:someValuesFrom rdf:resource="https://ontology.drpawspaw.com/disease"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://ontology.drpawspaw.com/hasSymptom"/>
+                <owl:someValuesFrom rdf:resource="https://ontology.drpawspaw.com/symptom"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://ontology.drpawspaw.com/hasDisease"/>
+                <owl:someValuesFrom rdf:resource="https://ontology.drpawspaw.com/disease_synonym"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://ontology.drpawspaw.com/hasDisease"/>
+                <owl:someValuesFrom rdf:resource="https://ontology.drpawspaw.com/symptom_synonym"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Use to make a connection between [Disease and Synonym] or [Disease and Synonym]</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://ontology.drpawspaw.com/ADSO00000 -->
+
+    <owl:DatatypeProperty rdf:about="https://ontology.drpawspaw.com/ADSO00000">
+        <rdfs:domain rdf:resource="https://ontology.drpawspaw.com/disease"/>
+        <rdfs:domain rdf:resource="https://ontology.drpawspaw.com/disease_synonym"/>
+        <rdfs:domain rdf:resource="https://ontology.drpawspaw.com/dog"/>
+        <rdfs:domain rdf:resource="https://ontology.drpawspaw.com/symptom"/>
+        <rdfs:domain rdf:resource="https://ontology.drpawspaw.com/symptom_synonym"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">This is an autogenerate unique identifier for entities</rdfs:comment>
+        <rdfs:label xml:lang="en">id</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://ontology.drpawspaw.com/text -->
+
+    <owl:DatatypeProperty rdf:about="https://ontology.drpawspaw.com/text">
+        <rdfs:domain rdf:resource="https://ontology.drpawspaw.com/animal"/>
+        <rdfs:domain rdf:resource="https://ontology.drpawspaw.com/disease_synonym"/>
+        <rdfs:domain rdf:resource="https://ontology.drpawspaw.com/dog"/>
+        <rdfs:domain rdf:resource="https://ontology.drpawspaw.com/symptom"/>
+        <rdfs:domain rdf:resource="https://ontology.drpawspaw.com/symptom_synonym"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Use to add any text regarding the entity</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://ontology.drpawspaw.com/animal -->
+
+    <owl:Class rdf:about="https://ontology.drpawspaw.com/animal">
+        <rdfs:comment xml:lang="en">This class defines the Animals (Eg: Dog, Cat)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://ontology.drpawspaw.com/disease -->
+
+    <owl:Class rdf:about="https://ontology.drpawspaw.com/disease">
+        <rdfs:comment xml:lang="en">This class defines the animal disease (Eg: Parvo)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://ontology.drpawspaw.com/disease_synonym -->
+
+    <owl:Class rdf:about="https://ontology.drpawspaw.com/disease_synonym">
+        <rdfs:subClassOf rdf:resource="https://ontology.drpawspaw.com/disease"/>
+        <rdfs:comment xml:lang="en">This class defines the synonyms for the disease (Eg: Rockey Mountain Spotted Fever -&gt; Tick Fever)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://ontology.drpawspaw.com/dog -->
+
+    <owl:Class rdf:about="https://ontology.drpawspaw.com/dog">
+        <rdfs:subClassOf rdf:resource="https://ontology.drpawspaw.com/animal"/>
+    </owl:Class>
+    
+
+
+    <!-- https://ontology.drpawspaw.com/symptom -->
+
+    <owl:Class rdf:about="https://ontology.drpawspaw.com/symptom">
+        <rdfs:subClassOf rdf:resource="https://ontology.drpawspaw.com/disease"/>
+        <rdfs:comment xml:lang="en">This class defines the disease symptoms</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://ontology.drpawspaw.com/symptom_synonym -->
+
+    <owl:Class rdf:about="https://ontology.drpawspaw.com/symptom_synonym">
+        <rdfs:subClassOf rdf:resource="https://ontology.drpawspaw.com/symptom"/>
+        <rdfs:comment xml:lang="en">This class defines the synonyms for symptoms (Eg: Fever -&gt; High Body Temparature)</rdfs:comment>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
