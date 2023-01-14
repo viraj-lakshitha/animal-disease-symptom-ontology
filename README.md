@@ -7,3 +7,19 @@
 
 ![mch](./main-class-hierachy.png)
 ![sch](./sub-class-hierachy.png)
+
+## Citations
+
+```
+
+@data{DVN/QX9ZAD_2023,
+  author = {Bandara, Viraj Lakshitha},
+  publisher = {Harvard Dataverse},
+  title = {{Animal Disease Symptom Ontology}},
+  year = {2023},
+  version = {DRAFT VERSION},
+  doi = {10.7910/DVN/QX9ZAD},
+  url = {https://doi.org/10.7910/DVN/QX9ZAD}
+}
+
+```
